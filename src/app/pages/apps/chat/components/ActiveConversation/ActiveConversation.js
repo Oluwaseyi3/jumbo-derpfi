@@ -26,8 +26,7 @@ const ActiveConversation = React.forwardRef(({onRefresh}, ref) => {
 
     React.useEffect(() => {
         setActiveConversation(conversationQuery?.conversation);
-        if (scrollbarRef)
-            scrollbarRef.current?.scrollToBottom();
+       
     }, [conversationQuery, scrollbarRef]);
 
     React.useEffect(() => {
