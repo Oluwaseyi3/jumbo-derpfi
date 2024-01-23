@@ -1,3 +1,4 @@
+import React from "react"
 import UsersList from "../pages/grid-views/UsersList";
 import ProjectsList from "../pages/grid-views/ProjectsList";
 import Page from "@jumbo/shared/Page";
