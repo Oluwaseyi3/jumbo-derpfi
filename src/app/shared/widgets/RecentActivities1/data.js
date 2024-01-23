@@ -1,3 +1,4 @@
+import React from "react"
 import Span from "@jumbo/shared/Span";
 import {getCustomDateTime} from "@jumbo/utils";
 import {ASSET_AVATARS, ASSET_IMAGES} from "../../../utils/constants/paths";
