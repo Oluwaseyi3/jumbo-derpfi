@@ -16,14 +16,14 @@ const ConversationDetail = ({conversation}) => {
             <ConversationMessage reply={conversation}/>
         )
     }, []);
-    const mailConversationMutation = useMutation(mailServices.mailConversation, {
-        onSuccess: () => {
-            activeConversation?.current?.refresh();
-            setMessage("");
-        }
-    });
+    // const mailConversationMutation = useMutation(mailServices.mailConversation, {
+    //     onSuccess: () => {
+    //         activeConversation?.current?.refresh();
+    //         setMessage("");
+    //     }
+    // }); 
     const handleConversationMail = React.useCallback(() => {
-        mailConversationMutation.mutate({mailID: conversation.id, message: message});
+    //    mailConversationMutation.mutate({mailID: conversation.id, message: message});
     });
     return (
         <React.Fragment>
