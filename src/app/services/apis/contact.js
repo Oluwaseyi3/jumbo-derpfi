@@ -177,26 +177,26 @@ mock.onPut('/contacts/update-label').reply(request => {
     return [200, label];
 });
 
-mock.onDelete('/contacts/delete-label').reply(request => {
-    const params = request.params;
-    const labelIndex = labels.findIndex(item => item?.id === params.id);
-    if (labelIndex >= 0) {
-        labels.splice(labelIndex, 1);
-        const updatedContacts = contacts.map(contact => {
-            if (Array.isArray(contact?.labels)) {
-                const labelIndex = contact?.label?.indexOf(params?.id);
-                if (labelIndex !== -1) {
-                    contact?.label?.slice(labelIndex, 1);
-                }
-            }
-            return contact;
-        });
+// mock.onDelete('/contacts/delete-label').reply(request => {
+//     const params = request.params;
+//     const labelIndex = labels.findIndex(item => item?.id === params.id);
+//     if (labelIndex >= 0) {
+//         labels.splice(labelIndex, 1);
+//         const updatedContacts = contacts.map(contact => {
+//             if (Array.isArray(contact?.labels)) {
+//                 const labelIndex = contact?.label?.indexOf(params?.id);
+//                 if (labelIndex !== -1) {
+//                     contact?.label?.slice(labelIndex, 1);
+//                 }
+//             }
+//             return contact;
+//         });
 
-        contacts.splice(0, contacts.length);
-        contacts.push(...updatedContacts);
-    }
-    return [200, params.id];
-});
+//         contacts.splice(0, contacts.length);
+//         contacts.push(...updatedContacts);
+//     }
+//     return [200, params.id];
+// });
 
 mock.onPut('/contacts/assign-label').reply(request => {
     const {contactIDs, labelIDs} = JSON.parse(request.data);
