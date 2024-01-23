@@ -14,18 +14,18 @@ const ActiveConversationFooter = () => {
         contactConversationsListRef,
     } = useChatApp();
     const [message, setMessage] = React.useState('');
-    const addMessageMutation = useMutation(chatService.addConversationMessage, {
-        onSuccess: () => {
-            activeConversationRef?.current?.refresh();
-            favoriteConversationsListRef?.current?.refresh();
-            recentConversationsListRef?.current?.refresh();
-            contactConversationsListRef?.current?.refresh();
-        }
-    });
+    // const addMessageMutation = useMutation(chatService.addConversationMessage, {
+    //     onSuccess: () => {
+    //         activeConversationRef?.current?.refresh();
+    //         favoriteConversationsListRef?.current?.refresh();
+    //         recentConversationsListRef?.current?.refresh();
+    //         contactConversationsListRef?.current?.refresh();
+    //     }
+    // });
     const onSendMessage = (event) => {
         const message = event.target.value.trim();
         if (event.key === 'Enter' && message) {
-            addMessageMutation.mutate({conversationID: activeConversation.id, message: message})
+            // addMessageMutation.mutate({conversationID: activeConversation.id, message: message})
             setMessage('');
         }
     };
